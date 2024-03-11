@@ -62,5 +62,5 @@ void image() {
         cv::imwrite("output/" + originalFileName + outputExtension, image);
     }
 
-    std::cout << "\nSuccessfully coverted " << inputExtension << " to " << outputExtension << "! Saved as 'output/" << originalFileName << outputExtension << "'." << std::endl;
+    std::cout << "\nSuccessfully converted " << inputExtension << " to " << outputExtension << "! Saved as 'output/" << originalFileName << outputExtension << "'." << std::endl;
 }
