@@ -1,4 +1,12 @@
 #include <iostream>
+
+// clear console window depending on OS
+#ifdef _WIN32
+    #define CLEAR_CONSOLE "cls" 
+#else
+    #define CLEAR_CONSOLE "clear" 
+#endif
+
 using namespace std;
 
 void convertFile() {
@@ -19,6 +27,7 @@ void convertFile() {
 
 int main() {
     do {
+        system(CLEAR_CONSOLE); 
         convertFile();
 
         char response;
@@ -30,5 +39,6 @@ int main() {
         }
     } while (true);
 
+    system(CLEAR_CONSOLE); 
     return 0;
 }
