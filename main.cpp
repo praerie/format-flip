@@ -1,32 +1,31 @@
 #include <iostream>
 #include <cctype>
+#include <string>
 
 // clear console window depending on OS
 #ifdef _WIN32
-    #define CLEAR_CONSOLE "cls" 
+    #define CLEAR_CONSOLE "cls" // Windows
 #else
-    #define CLEAR_CONSOLE "clear" 
+    #define CLEAR_CONSOLE "clear" // Linux and MacOS
 #endif
 
-using namespace std;
-
 void convertFile() {
-    string fileType;
-    cout << "Input file type (image, video, audio): ";
-    cin >> fileType;
+    std::string fileType;
+    std::cout << "Input file type (image, video, audio): ";
+    std::cin >> fileType;
 
     for (char& c : fileType) {
-        c = tolower(c);
+        c = std::tolower(c);
     }
 
     if (fileType == "image") {
-        cout << "Image converted successfully." << endl;
+        std::cout << "Image converted successfully." << std::endl;
     } else if (fileType == "video") {
-        cout << "Video converted successfully." << endl;
+        std::cout << "Video converted successfully." << std::endl;
     } else if (fileType == "audio") {
-        cout << "Audio converted successfully." << endl;
+        std::cout << "Audio converted successfully." << std::endl;
     } else {
-        cout << "Unsupported file type." << endl;
+        std::cerr << "Unsupported file type." << std::endl;
     }
 }
 
@@ -36,8 +35,8 @@ int main() {
         convertFile();
 
         char response;
-        cout << "Convert another file? [Y/N]" << endl;
-        cin >> response;
+        std::cout << "Convert another file? [Y/N]" << std::endl;
+        std::cin >> response;
 
         if (response != 'Y' && response != 'y') {
             break;
