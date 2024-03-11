@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cctype>
 
 // clear console window depending on OS
 #ifdef _WIN32
@@ -13,6 +14,10 @@ void convertFile() {
     string fileType;
     cout << "Input file type (image, video, audio): ";
     cin >> fileType;
+
+    for (char& c : fileType) {
+        c = tolower(c);
+    }
 
     if (fileType == "image") {
         cout << "Image converted successfully." << endl;
