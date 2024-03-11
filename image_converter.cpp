@@ -14,6 +14,11 @@ void image() {
     }
 
     cv::Mat image = cv::imread(inputFilePath, cv::IMREAD_UNCHANGED);
+    /*
+        declares a variable 'image' of type cv::Mat (matrix structure that represents images in OpenCV);
+        imread fx reads the image from specified file path;
+        image loaded without any modification or conversion as indicated by 'cv::IMREAD_UNCHANGED' flag
+    */
 
     if (image.empty()) {
         std::cerr << "\n[!] Error: Image could not be loaded." << std::endl;
