@@ -1,0 +1,31 @@
+# Ignore compiled binaries and executables
+*.exe
+*.out
+*.o
+
+# Ignore build and temporary files
+build/
+bin/
+*.log
+
+# Ignore IDE and editor specific files
+.vscode/
+*.suo
+*.sdf
+*.ipch
+*.ncb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.~mp
+*.bak
+*.cache
+*.ncb
+*.suo
+*.sdf
+*.opensdf
+*.cachefile
+*.vc.db
