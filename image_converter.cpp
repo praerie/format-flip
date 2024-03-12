@@ -13,14 +13,14 @@ void image() {
         return;
     }
 
-    cv::Mat image = cv::imread(inputFilePath, cv::IMREAD_UNCHANGED);
+    cv::Mat img = cv::imread(inputFilePath, cv::IMREAD_UNCHANGED);
     /*
-        declares a variable 'image' of type cv::Mat (matrix structure that represents images in OpenCV);
+        declares a variable 'img' of type cv::Mat (matrix structure that represents images in OpenCV);
         imread fx reads the image from specified file path;
         image loaded without any modification or conversion as indicated by 'cv::IMREAD_UNCHANGED' flag
     */
 
-    if (image.empty()) {
+    if (img.empty()) {
         std::cerr << "\n[!] Error: Image could not be loaded." << std::endl;
         return;
     }
@@ -48,18 +48,19 @@ void image() {
 
     if (outputFormat == "PNG") {
         outputExtension = ".png";
+        cv::imwrite("output/" + originalFileName + outputExtension, img);
     }
     else if (outputFormat == "JPEG") {
         outputExtension = ".jpeg";
-        cv::imwrite("output/" + originalFileName + outputExtension, image, { cv::IMWRITE_JPEG_QUALITY, 90 });
+        cv::imwrite("output/" + originalFileName + outputExtension, img, { cv::IMWRITE_JPEG_QUALITY, 90 });
     }
     else if (outputFormat == "WEBP") {
         outputExtension = ".webp";
-        cv::imwrite("output/" + originalFileName + outputExtension, image, { cv::IMWRITE_WEBP_QUALITY, 90 });
+        cv::imwrite("output/" + originalFileName + outputExtension, img, { cv::IMWRITE_WEBP_QUALITY, 90 });
     }
     else if (outputFormat == "TIFF") {
         outputExtension = ".tiff";
-        cv::imwrite("output/" + originalFileName + outputExtension, image);
+        cv::imwrite("output/" + originalFileName + outputExtension, img);
     }
 
     std::cout << "\nSuccessfully converted " << inputExtension << " to " << outputExtension << "! Saved as 'output/" << originalFileName << outputExtension << "'." << std::endl;
