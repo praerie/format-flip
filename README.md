@@ -1,6 +1,6 @@
 # Format Flip
 
-A command line image file converter coded in C++ and utilizing the OpenCV library. This project currently converts the formats PNG, JPEG, WebP, and TIFF!
+A command line image file converter coded in C++ that uses the OpenCV library. This project currently converts the formats PNG, JPEG, WebP, and TIFF!
 
 ## To-Do
 
